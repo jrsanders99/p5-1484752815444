@@ -5,7 +5,6 @@ function setup() {
   createCanvas(480,120);
 }
 function draw() {
-
 background(0,26,51);
 background(0,0,255);
 // fill(255); // WHITE
