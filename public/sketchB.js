@@ -8,8 +8,8 @@ function draw() {
 
 background(0,26,51);
 background(0,0,255);
-fill(255); // WHITE
-// fill(255,0,0); // RED
+// fill(255); // WHITE
+fill(255,0,0); // RED
 background(0,0,255);
 // fill(255); // WHITE
 fill(255,0,0); // RED
