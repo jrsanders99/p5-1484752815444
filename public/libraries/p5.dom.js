@@ -19,11 +19,11 @@
  * <p>See <a href="https://github.com/processing/p5.js/wiki/Beyond-the-canvas">tutorial: beyond the canvas</a>
  * for more info on how to use this libary.</a>
  *
- * @module p5.dom
- * @submodule p5.dom
- * @for p5.dom
- * @main
- */
+ @module p5.dom
+ @submodule p5.dom
+ @for p5.dom
+ @main
+ 
 
 (function (root, factory) {
   if (typeof define === 'function' && define.amd)

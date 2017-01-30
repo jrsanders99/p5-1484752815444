@@ -1,3 +1,4 @@
+/*globals createCanvas strokeWeight ellipseMode background RADIUS stroke line noStroke fill ellipse rect*/
 var x=60 ;//x coordinate
 var y = 390; // y coordinate
 var bodyHeight =180; // Body Height
