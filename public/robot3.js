@@ -5,7 +5,6 @@ var bodyHeight =160; // Body Height
 var neckHeight =70; // Neck Height
 var radius = 45;
 var easing = 0.04;
-var ny = y-bodyHeight - neckHeight - radius; // Neck Y
 
 function setup(){
   createCanvas (360,480);
@@ -13,18 +12,28 @@ function setup(){
   ellipseMode(RADIUS);
 }
 function draw(){
+  var targetX=mouseX;
+  x+= (targetX -x)* easing;
+  if (mouseIsPressed) {
+  	neckHeight=16;
+  	bodyHeight=90;
+    }
+  else{
+  	neckHeight=70;
+  	bodyHeight=160;
+  }
+  var neckY = y-bodyHeight - neckHeight - radius; // Neck Y
+  
   background(204);
   //Neck
   stroke(102);
-  line (x+2,y-bodyHeight,x+2,ny);
-  line (x+12,y-bodyHeight,x+12,ny);
-  line (x+22,y-bodyHeight,x+22,ny);
-
+  line (x+2,y-bodyHeight,x+12,neckY);
+  
   //Antennae
   stroke(102);
-  line (x+12,ny,x-18,ny-43);
-  line (x+12,ny,x+42,ny-99);
-  line (x+12,ny,x+78,ny+15);
+  line (x+12,neckY,x-18,ny-43);
+  line (x+12,neckY,x+42,ny-99);
+  line (x+12,neckY,x+78,ny+15);
 
   //Body
   noStroke();
@@ -32,18 +41,13 @@ function draw(){
   ellipse(x,y-33,33,33);
   fill(0);
   rect (x-45,y-bodyHeight,90,bodyHeight-33);
-  fill(102);
-  rect (x-45,y-bodyHeight+17,90,6);
+  
 
   //Head
   fill(0);
-  ellipse(x+12,ny,radius,radius);
+  ellipse(x+12,neckY,radius,radius);
   fill(255);
-  ellipse(x+24,ny-6,14,14);
+  ellipse(x+24,neckY-6,14,14);
   fill(0);
-  ellipse(x+24,ny-6,3,3);
-  fill(153);
-  ellipse(x,ny-8,5,5);
-  ellipse(x+30,ny-26,4,4);
-  ellipse(x+41,ny+6,3,3);
+  ellipse(x+24,neckY-6,3,3);
 }
